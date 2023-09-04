@@ -6,7 +6,7 @@ import { ApplicationContext } from '../contexts/ApplicationContext';
 
 const EditItemScreen = (props) => {
   const { id, editToItem } = useContext(ApplicationContext);
-  [type, setType] = useState(JSON.parse(props.route.params).typeId)
+  const [type, setType] = useState(JSON.parse(props.route.params).typeId)
 
   const handleSubmit = (item) => {
     if (item) {

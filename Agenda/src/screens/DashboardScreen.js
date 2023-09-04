@@ -68,7 +68,7 @@ const DashboardScreen = (props) => {
                             <Ionicons name="clipboard" size={25} color="black" />
                             <Text style={styles.textParagraph}> {item.title}</Text>
                         </View>
-                        <Text style={styles.textParagraph}> {item.datetime.split(',')[1]}</Text>
+                        <Text style={styles.textParagraph}> {item.datetime.split(',')[1].split('.')[0]}</Text>
                     </View>
                 ))}
             </CardPrincipal>

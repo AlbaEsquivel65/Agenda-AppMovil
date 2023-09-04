@@ -37,7 +37,7 @@ const ActivityScreen = (props) => {
                             <View>
                                 <Text style={styles.titleSecundary}>Hora:</Text>
                                 <View style={styles.cardSecundary3}>
-                                    <Text style={styles.textParagraph}> {item.datetime.split(',')[1]}</Text>
+                                 <Text style={styles.textParagraph}> {item.datetime.split(',')[1].split('.')[0]}</Text>
                                 </View>
                             </View>
 

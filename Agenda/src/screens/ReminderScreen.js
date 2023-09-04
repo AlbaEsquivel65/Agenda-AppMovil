@@ -41,11 +41,13 @@ const RemiderScreen = (props) => {
                             <View>
                                 <Text style={styles.titleSecundary}>Hora:</Text>
                                 <View style={styles.cardSecundary2}>
-                                    <Text style={styles.textParagraph}> {item.datetime.split(',')[1]}</Text>
+                                    <Text style={styles.textParagraph}> {item.datetime.split(',')[1].split('.')[0]}</Text>
+                                    {console.log(item.datetime)}
                                 </View>
                             </View>
 
                         </View>
+                        
 
                     </CardPrincipal>
                 ))}
