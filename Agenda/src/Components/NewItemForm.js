@@ -1,6 +1,6 @@
 import { Picker } from "@react-native-picker/picker";
 import React, { useEffect, useState } from "react";
-import { Text, TextInput, View, Pressable } from "react-native";
+import { Text, TextInput, View, Pressable, ScrollView } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import dayjs from "dayjs";
 import styles from "../utils/styles";
@@ -101,7 +101,7 @@ const NewItemForm = (props) => {
     }
 
     return (
-        <View style={(props.type === 1) ? styles.containerForm1 : (props.type === 2) ? styles.containerForm2 : styles.containerForm3}>
+        <ScrollView style={(props.type === 1) ? styles.containerForm1 : (props.type === 2) ? styles.containerForm2 : styles.containerForm3}>
             <Text style={styles.header2} >Titulo:</Text>
             <TextInput
                 style={styles.input}
@@ -120,9 +120,9 @@ const NewItemForm = (props) => {
                 placeholder="Agregue una descripcion...."
             />
             {(props.type !== 1) &&
-                <View style={styles.boxBetween}>
+                <View >
                     <View>
-                        <Text style={styles.header2}>Fecha:</Text>
+                      
                         < Pressable style={(props.type === 1) ? styles.buttonForm1 : (props.type === 2) ? styles.buttonForm2 : styles.buttonForm3}
                             onPress={showDatepicker} >
                             <Text style={styles.textButtonForm}>{itemData ? "Editar fecha" : "Agregar fecha"}</Text>
@@ -130,7 +130,7 @@ const NewItemForm = (props) => {
 
                     </View>
                     <View >
-                        <Text style={styles.header2}>Hora:</Text>
+                        
                         < Pressable style={(props.type === 1) ? styles.buttonForm1 : (props.type === 2) ? styles.buttonForm2 : styles.buttonForm3}
                             onPress={showTimepicker} >
                             <Text style={styles.textButtonForm}>{itemData ? "Editar hora" : "Agregar hora"} </Text>
@@ -173,7 +173,7 @@ const NewItemForm = (props) => {
                     <Text style={styles.textButtonForm}>Cancelar</Text>
                 </Pressable>
             </View>
-        </View>
+     </  ScrollView >
     );
 };
 
